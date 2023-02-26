@@ -1,0 +1,27 @@
+<div >
+    <app-side-bar [sidebar]="openSideBar"(closeSideBar)="close($event)"></app-side-bar>
+</div>
+<div class="center">
+    <app-add-user [mode]="true"></app-add-user>
+</div>
+<div class="separator"></div>
+<div class="space">
+    <span>Liste des Utilisateurs</span>
+    <div>
+        <button class="btn-cancel"type="button"><i class="fa fa-close"></i><span>Cancel</span></button>
+        <button class="btn-save"type="button"(click)="updateUser(user)"><i class="fa fa-save"></i><span>Save</span></button>
+        <button class="btn-load"type="button" (click)="usersList()"><i class="fa fa-spinner"></i><span>Load</span></button>
+    </div>
+ 
+  </div>
+<div class="center" droppable >  
+<div *ngFor="let element of listUsers"draggable [dragData]="element">
+   
+    <div class="user">
+      
+        <app-add-user   [mode]="false"[dataUser]="element"[readOnly]="true"[open]="true"(openSideBar)="open($event)"
+      (delete)="deleteUser($event)"></app-add-user>
+   
+    </div>
+</div>
+</div>

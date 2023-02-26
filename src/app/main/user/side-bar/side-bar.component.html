@@ -1,0 +1,32 @@
+
+<div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+  <div
+      class="sidebar-close"
+      (click)="close()"
+  >
+      X
+  </div>
+  <div class="sidebar-content" [formGroup]="userForm">
+    <div class=" row formulaire">
+      <div class="label">
+        <label >NOM</label>
+      </div>
+    <div>
+      <input class="input" formControlName="name" placeholder="NOM" >
+    </div>
+    <div class="label">  
+      <label>PRENOM</label>
+    </div>
+  <div>
+    <input class="input"formControlName="usurname" placeholder="PRENOM">
+  </div>
+  <div class="label">
+    <label>NOMBRE D'ANNEE D'EXPERIENCE</label>
+  </div>
+<div class="experience">
+  <input class="input"formControlName="years" placeholder="0"readOnly="true">
+
+</div>
+  </div>
+  </div>
+</div>

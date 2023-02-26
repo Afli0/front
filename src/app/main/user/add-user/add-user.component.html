@@ -1,0 +1,33 @@
+
+<div class ="Card" [formGroup]="userForm" (click)="open?openSidebar(userForm.value):null">   
+    <div class="header"*ngIf="mode">
+      <span >Ajouter Utilisateur</span>
+    </div>
+    <span class="" (click)="deleteUser(userForm.value)"><i class=" delete fa fa-trash "></i></span>
+    <div class=" row formulaire">
+      <div class="label">
+        <label >NOM</label>
+      </div>
+    <div>
+      <input class="input" formControlName="name" placeholder="NOM" [readOnly]="readOnly"[disabled]="readOnly">
+    </div>
+    <div class="label">  
+      <label>PRENOM</label>
+    </div>
+  <div>
+    <input class="input"formControlName="usurname" placeholder="PRENOM"[readOnly]="readOnly"[disabled]="readOnly">
+  </div>
+  <div class="label">
+    <label>NOMBRE D'ANNEE D'EXPERIENCE</label>
+  </div>
+<div class="experience">
+  <input class="input"formControlName="years" placeholder="0">
+ <span *ngIf="mode" class="" ><i class="fa fa-plus"(click)="incrementExp()"></i>
+ <i class="fa fa-minus" (click)="decrementExp()"></i></span> 
+</div>
+  </div>
+  <div *ngIf="mode">
+    <button class="btn "type="button"(click)="addUser()">Add</button>
+  </div>
+  
+</div>
